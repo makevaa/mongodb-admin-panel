@@ -1,0 +1,73 @@
+
+<html lang="en">
+<head>
+    <%- include('partials/head'); %>
+</head>
+
+<body>
+
+    <header>
+        <%- include('partials/header'); %>
+    </header>
+
+    <!--
+    <ol class="breadcrumb">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Library</a></li>
+        <li class="active">Data</li>
+      </ol>
+-->
+
+
+    <div class="content">
+
+        <ol class="breadcrumb">
+            <li><a href="/collections">Collections</a></li> / 
+            <li><a href="/persons">Persons</a></li>
+        </ol>
+
+
+        <h1>Persons</h1>
+
+        <a href="/add-person" class="btn btn-primary">Add new person</a> 
+
+        <table>
+            <tr>
+                <th>_id</th>
+                <th>index</th>
+                <th>firstName</th>
+                <th>lastName</th>
+                <th>job</th>
+            
+            </tr>
+
+            <% for (var i = 0; i < persons.length; i++) { %>
+                <tr>    
+                    <td> <%= persons[i]._id%> </td>
+                    <td> <%= i %> </td>
+                    <td> <%= persons[i].firstName%> </td>
+                    <td> <%= persons[i].lastName%> </td>
+                    <td> <%= persons[i].job%> </td>
+
+                
+
+                    <td> <a href="person/<%= persons[i]._id%>" class="btn btn-primary">Edit</a> </td> 
+
+
+
+            
+                    <td> <a href="person/<%= persons[i]._id%>/delete" class="btn btn-danger">Delete</a> </td> 
+
+
+                </tr>
+
+            
+
+            <% } %>
+
+        </table>
+
+    </div>
+</body>
+
+</html>

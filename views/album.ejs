@@ -1,0 +1,133 @@
+
+<html lang="en">
+<head>
+    <%- include('partials/head'); %>
+</head>
+
+<body>
+
+    <header>
+        <%- include('partials/header'); %>
+    </header>
+
+
+
+    <div class="content">
+
+        <ol class="breadcrumb">
+            <li><a href="/collections">Collections</a></li> / 
+            <li><a href="/albums">Albums</a></li> /
+            <li class="active">
+                <a href="/album/<%= album._id %>">Edit album</a>
+            </li>
+        </ol>
+
+        <h1>Album</h1>
+
+
+        <form action="/update-album" method="post">
+
+            <label>Name:</label> 
+            <input name="name" type="text" value ="<%= album.name %>"/>
+            <br>
+
+
+
+           <!-- Artists dropdown menu -->
+           <label for="artist">Artist:</label>
+            <div id="artist" class="ui fluid search selection dropdown">
+                <input type="hidden" name="artist" value=<%= album.artist %>>
+                <i class="dropdown icon"></i>
+                    <div class="default text">Select artist</div>
+                    <div class="menu">
+
+                        <% for (var i = 0; i < artists.length; i++) { %>
+                            <div class="item" data-value=<%= artists[i]._id%> >  <%= artists[i].name %>  </div>
+                        <% } %>
+
+                    </div>
+            </div>
+            <br>
+
+            <label>Year:</label> 
+            <input name="year" type="text" value ="<%= album.year%>"/>
+            <br>
+
+            <label>Image:</label>
+            <input name="image" type="text" value ="<%= album.image%>"/>
+
+            <a href="https://i.imgur.com/<%= album.image%>.jpg" target="_blank">i.imgur.com/<%= album.image%>.jpg</a>
+            <br>
+           
+
+
+            <br>
+
+
+
+
+
+
+            <br>
+         
+            <input type="hidden" name="id" value="<%= album._id %>">
+            
+            <div class="edit-buttons">
+                <input type="submit" value="Update document" class="btn btn-primary"/>
+            </div>
+        </form>
+    
+    
+    
+        <br><br>
+        Current values:
+        <table class="current-values">
+            <tr>
+                <th>key</th>
+                <th>value</th>
+            </tr>
+    
+            <tr>
+                <td> name  </td>
+                <td>  <%= album.name %>  </td>
+            </tr>
+    
+            <tr>
+                <td> artist  </td>
+                <td>  <%= album.artist %>  </td>
+            </tr>
+    
+            <tr>
+                <td> year  </td>
+                <td>  <%= album.year %>  </td>
+            </tr>   
+            
+            <tr>
+                <td> image  </td>
+                <td>  <%= album.image %>  </td>
+            </tr>   
+            
+            <tr>
+                <td> _id  </td>
+                <td>  <%= album._id %>  </td>
+            </tr>
+        </table>
+    
+    </div>
+
+
+    
+
+    <!-- init fomantic-ui dropdown menus -->
+    <script>
+        
+
+        $('#artist').dropdown();
+ 
+    </script> 
+
+
+
+</body>
+
+</html>

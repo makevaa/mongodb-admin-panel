@@ -1,0 +1,229 @@
+
+
+
+2023-12-12:
+>Mongo DB admin panel on virallisesti valmis
+  --> Kaksi osaa: tietokanna sivut, ja mega-view
+>Käytetyt teknologiat: JS, Nodejs, EJS, Express, MongoDB (ja Mongoose), Bootstrap, HTML, CSS
+
+>Mega-view: uusi playlist elementti saa "playlist-id" attribuutin toimii, ja on heti klikattavissa.
+>New playlist -nappulassa css-tyylit
+>New playlist -input jutussa css-tyylit
+Aloitetaan jotain uutta, vaikka React ja Next.js (react framework)
+
+
+
+
+2023-12-07
+>Libraryssa kebab-menussa ei näy "Delete from playlist"
+>Mega-viewin haun searchstringeissä on nyt myös albumi
+>Bugfix: Kaikki biisit tulee nyt oikeisiin Playlisteihin
+>Bugfix: Testidatan merkkijonot trimmataan nyt oikein
+>New playlist nappula toimii, ja elementit lisätään
+
+
+
+2023-12-05:
+>Drag and drop toimii, biisi listautuu oikeaan listaan 
+>Animoitu "added" teksti kun lisätään biisi
+>Animoitu playlist item tausta kun lisätään biisi
+>Playlisteihin ei voi enää lisätä samaa biisiä montaa kertaa
+>Tracklistin search-ominaisuus toimii
+
+2023-11-30:
+>Library-nappula toimii ja kaikki musiikki tulee näkyviin
+>Library-nappulan selected-css toimii playlistien kanssa hyvin
+>Drag-n-drop aloitettu, css toimii kohtalaisesti, dataa ei siirretä vielä
+
+2023-11-29:
+>Biiseillä on oma kebab-menu nappula mega viewissä
+>Menusta avautuu pieni valikko
+>Valikosta voi poistaa biisin listalta, biisi häviää myös DOMista
+>Animaatio biisin häviämiseen
+>Track amount päivittyy oikein
+
+2023-11-28:
+>Mega view toimii, data haetaan ja näytetään oikein
+to-do: listan header labelien pitäisi näkyä koko ajan, nyt kun skrollaa niin ne jää ylös. 
+
+2023-11-23:
+>Muutettiin app.js ES-moduuliksi, muuteltiin moduulien importteja.
+>Hylätään Reactin testailu, ei tarvita toista template-engineä.
+Aloitetaan tekemään mega-sivua. Haetaan kaikki data varmaan ja laitetaan selaimen muistiin. Voidaan kokeilla JS:n Map-tietorakennetta.
+
+
+2023-11-22:
+>Dark theme on toteutettu
+>Nappulat add/delete test data
+>Testailtu Reactia
+>Asennettu ja laitettu toimintaan Babel JSX-esiprosessori
+>Muutettu vanhanaikaiset CommonJS-moduulit moderneiksi ES-moduuleiksi (filen laussa olevat importit)
+todo: model-filet pitää kai exportata ES moduuleina
+
+
+2023-11-21:
+>Trackit tulee testi datasta oikein
+>Kaikki testidata tulee oikein, myös playlistit ja niigin lisäys toimii
+Aloitetaan ns. "mega view": Spotify-tyylinen, vasemmalla playlistit, oikealla kaikki musiikki
+Musiikkia voi hakea, yms. Biisejä voi drag-and-dropata listoihin.
+Tähän voitaisiin oikeastaan käyttää Reactia.
+
+
+2023-11-16:
+Tehty:
+>Fiksailtu CSS
+>Testidatan lukeminen toimii
+>Uudet endpointit testidatalle: /add-test-data ja /delete-all-data
+>Testidata syöttää nyt artistit ja albumit oikein, tarvitaan vielä trackien lisäys
+>Aloitettiin trackien lisääminen testidatasta
+
+2023-11-15:
+Tehty:
+>Albumin voi valita add-track ja edit-track sivuilta. Valittu albumi näkyy defaulttina kuten pitääkin.
+>SSH-yhteys on blokattu joten pushaaminen GitHubiin ei onnistunut kuin eri netillä.
+>Fiksailtu CSS:ää
+
+
+
+
+2023-11-14
+Tehty:
+>Albumi schema, endpointit, templatet yms.
+>Artistin voi lisätä track-sivulta. Sivu ladataan uudestaan ja täytetty data tyhjenee, mutta uusi artisti löytyy listalta. Osoiteriviin jää get-kyselyn "submit-artist/:name/, vaikka ollaan add-track -sivulla.
+
+
+*2023-11-09
+Tehty:
+>Playlistit näkyy oikein biisissä
+>Playlistin nimen muuttaminen ei poista kaikkia biisejä listasta
+>Taulukkoja voi sortata sarakkeiden mukaan     
+Mihin jäätiin: "Create new artist" linkki näkyy add-track -sivulla, jos ei löydy artistia. Tästä voi jatkaa johonkin.
+
+
+
+*mihin jäätiin 2023-11-08:
+Biisien lisäys listoihin toimii, ja listoissa näkyy "track amount". 
+Se ei toimi, että kun biisin sivu ladataan, niin biisin listojen pitäisi näkyä ns. blokkeina kentässä.
+Jos tällä saisi jotain aikaan:
+    $('#playlists.ui.dropdown').dropdown('set selected', ['65438b4c412f113bdff63fca']);
+ei ehkä toimi, koska valittu lista ei olekkaan menussa nyt. Ehkä voisi laittaa aluksi listaan kaikki, ja sitten jos saisi initattua inputin valituilla.
+
+
+*mihin jäätiin 2023-11-07:
+playlistiejä ei voi editoida tai poistaa. Playlistin editointi sivu on, mutta mitään update-playlist endpointtia ei ole.
+Lisäksi breadcrumb linkit ei ihan toimi oikein.
+
+
+
+*mihin jäätiin 2023-11-02:
+asennettiin se semantic ui juttu. Kansiot taisi olla väärin head templatessa.
+Pitää olla kai semantic/dist kansi otai jotain.
+Korjataan se ja tehdään search-dropdown biisien sivulle.
+
+
+
+>Tietokannan käynnistämiseen komennot:
+sudo systemctl start mongod
+mongosh
+
+>Babelin käynnistys (JSX preprocessor):
+npx babel --watch src --out-dir public/js --presets react-app/prod
+
+
+mongod -dbpath ~/koodi/node1/MyMongoDB 
+
+mongod --config configuration.file
+npx babel --watch src --out-dir . --presets react-app/prod //piste tekee js filet roottiin
+
+
+start mongod process: 
+sudo systemctl start mongod
+
+verify mongod has started: 
+sudo systemctl status mongod
+
+stop: 
+sudo systemctl stop mongod
+
+restart: 
+sudo systemctl restart mongod
+
+
+start mongosh session: 
+mongosh
+
+
+service mongod status
+
+
+
+
+open current folder in file manager:
+xdg-open .
+
+***********
+
+>start Node app with Nodemon:
+npm run start
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <% for (var i = 0; i < persons.length; i++) { %>
+        <span class="aaa"><%= persons[i].firstName %></span>
+
+      <li class="nav-icon">
+        <a href="<%= links[i].href %>" class="nav-link">
+          <%= links[i].icon %>
+          <span class="link-text"><%= links[i].text %></span>
+        </a>
+      </li>
+    <% } %>
+
+
+
+
+
+
+          <!--
+      <div class="item" data-value="af"><i class="af flag"></i>Afghanistan</div>
+      <div class="item" data-value="ax"><i class="ax flag"></i>Aland Islands</div>
+      <div class="item" data-value="al"><i class="al flag"></i>Albania</div>
+      <div class="item" data-value="dz"><i class="dz flag"></i>Algeria</div>
+      -->
+
+
+
+           <!-- Add un-selected playlists to menu -->
+                <% for (var i = 0; i < unselectedPlaylists.length; i++) { %>
+                
+                    <option selected value=<%= unselectedPlaylists[i]._id%>><%= unselectedPlaylists[i].name%></option>
+                    
+                <% } %>
+
+
+                    <!-- Add selected playlists as boxes -->
+                <% for (var i = 0; i < track.playlists.length; i++) { %>
+
+   
+
+                    <option selected value=<%= track.playlists[i]._id %>> <%=track.playlists[i].name%> </option>
+
+
+
+                <% } %>
+
+
+
+    

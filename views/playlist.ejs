@@ -1,0 +1,111 @@
+
+<html lang="en">
+<head>
+    <%- include('partials/head'); %>
+</head>
+
+<body>
+
+    <header>
+        <%- include('partials/header'); %>
+    </header>
+
+
+
+    <div class="content">
+
+        <ol class="breadcrumb">
+            <li><a href="/collections">Collections</a></li> / 
+            <li><a href="/playlists">Playlists</a></li> /
+            <li class="active">
+                <a href="/playlist/<%= playlist._id %>">Edit playlist</a>
+            </li>
+        </ol>
+
+        <h1>Edit playlist</h1>
+
+
+        <form action="/update-playlist" method="post">
+
+            <label>Name:</label>
+            <input name="name" type="text" value ="<%= playlist.name %>"/>
+            <br>
+
+            <label>Description:</label>
+            <input name="desc" type="text" value ="<%= playlist.desc %>"/>
+            <br>
+
+            <label>Image:</label>
+            <input name="image" type="text" value ="<%= playlist.image %>"/>
+            <br>
+
+            <label>Smaller image:</label>
+            <input name="imageSmall" type="text" value ="<%= playlist.imageSmall %>"/>
+            <br>
+
+            
+
+
+
+            <input type="hidden" name="id" value="<%= playlist._id %>">
+            
+            <div class="edit-buttons">
+                <input type="submit" value="Update document" class="btn btn-primary"/>
+            </div>
+        </form>
+    
+    
+    
+        <br><br>
+        Current values:
+        <table class="current-values">
+    
+            <tr>
+                <th>key</th>
+                <th>value</th>
+            </tr>
+    
+            <tr>
+                <td> _id  </td>
+                <td>  <%= playlist._id %>  </td>
+            </tr>
+    
+            <tr>
+                <td> name  </td>
+                <td>  <%= playlist.name %>  </td>
+            </tr>
+    
+            
+
+
+            <tr>  
+
+                <td> tracks </td>
+                <td>
+                <% for (var i = 0; i < playlist.tracks.length; i++) { %>
+             
+                    <%= playlist.tracks[i] %>,
+        
+                <% } %>
+                </td>
+
+            </tr>
+
+            
+
+         
+    
+    
+        </table>
+    
+
+
+    </div>
+    
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,143 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    xborder:1px solid red;
+    padding: 0px;
+    margin:0px;
+    font-size:1.2em;
+    xbackground-color:rgb(49, 49, 49);
+    xcolor:red;
+    
+}
+
+.navbar {
+    xborder:1px solid red;
+    xmargin-bottom:10px;
+    xpadding:20px;
+    box-shadow:0px 5px 5px rgba(0,0,0,0.3);
+    z-index:2;
+}
+
+.nav-item {
+    transition: all 0s;
+}
+
+/* buttons to add/delete test data */
+a.test-data {
+    xborder:1px solid red;
+    border-radius:5px;
+    background-color:rgba(0,0,0,0.3);
+    margin-right:5px;
+    transition: all 0s;
+}
+
+a.test-data:hover {
+    background-color:rgba(0,0,0,0.1);
+} 
+
+h1 {
+    margin-bottom:20px;
+}
+
+.content {
+    xborder:1px solid grey;
+    padding:5px;
+    max-width:700px;
+    width:100%;
+    padding:20px;
+}
+
+
+th {
+    background: white;
+    position: sticky;
+    top: 0;
+}
+
+table {
+    margin:20px 0px 20px 0px;
+    position: relative;
+}
+
+
+
+/* tr:nth-child(even){background-color: #f2f2f2;} */
+tr {
+    transition:all 0.05s;
+}
+
+tbody > tr:hover td {
+    background-color:rgba(59, 59, 70, 0.05)!important;
+   
+}
+
+
+
+/* the current values table when viewing a document */
+table.current-values {
+    xcolor:grey;
+}
+
+/* Buttons when viewing a document */
+div.edit-buttons {
+    xborder:1px solid grey;
+    padding:5px;
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+}
+
+/* "Add new document" buttons */
+a.add-new {
+    width:200px;
+}
+
+
+/* bootstrap class, header title */
+a.navbar-brand {
+    padding:10px 10px 10px 10px;
+    color:rgb(156, 156, 156);
+  
+}
+
+/* Make columns wider in tables */
+th.wide{
+    min-width:200px;
+}
+
+th.wide2{
+    min-width:300px;
+}
+
+
+label {
+    xborder:1px solid red;
+    min-width:130px;
+    text-align:right;
+    margin-bottom:10px;
+    padding-right:10px;
+}
+
+/* make all text input fields wider */
+input[type=text] {
+    min-width:330px;
+}
+
+/* Artist dropdown selection menus */
+.dropdown {
+    xborder:1px solid red;
+    margin-bottom:5px;
+    display:inline-block!important;
+    max-width:300px;
+    height:20px;
+}
+
+span.doc-amount {
+    margin-left:10px;
+}

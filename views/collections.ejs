@@ -1,0 +1,69 @@
+
+<html lang="en">
+<head>
+    <%- include('partials/head'); %>
+</head>
+
+<body>
+
+    <header>
+        <%- include('partials/header'); %>
+    </header>
+
+    <div class="content">
+
+        <ol class="breadcrumb">
+            <li class="active"><a href="/collections">Collections</a></li> 
+        </ol>
+
+  
+
+        <h1>Collections</h1>
+
+
+        
+        <table class="current-values" class="ui sortable celled table">
+            
+            <thead>
+                <tr>
+                    <th>index</th>
+                    <th>collection name</th>
+                </tr>
+            </thead>
+    
+            <tbody>
+                <% for (var i = 0; i < colNames.length; i++) { %>
+                    <tr>    
+                        <td> <%= i%> </td>
+
+                        <td> <a href="<%= colNames[i]%>"><%= colNames[i]%></a> </td>
+                    
+                    
+                        <!-- <td> <a href="person/" class="btn btn-primary">Rename</a> </td> -->
+
+
+                        <td> <a href="collections/delete/<%= colNames[i]%>" class="btn btn-danger">Delete</a> </td> 
+                    </tr>
+                <% } %>
+            </tbody>
+
+    
+    
+        </table>
+
+
+        <!--
+        <td> <a href="add-collection" class="btn btn-primary">Add new collection</a> </td> 
+        -->
+    
+
+
+    </div>
+    
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+
+<html lang="en">
+<head>
+    <%- include('partials/head'); %>
+</head>
+
+<body>
+
+    <header>
+        <%- include('partials/header'); %>
+    </header>
+
+
+
+    <div class="content">
+
+        <h1>Add collection</h1>
+
+
+        <form action="/submit-collection" method="post">
+            <span class="item-key">Collection name:</span> <input name="name" type="text" value =""/>   <br>
+            
+            <div class="edit-buttons">
+                <input type="submit" value="Add new document" class="btn btn-primary"/>
+            </div>
+            
+    
+        </form>
+    
+    
+    
+    </div>
+    
+
+
+
+
+</body>
+
+</html>

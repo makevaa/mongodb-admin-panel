@@ -1,0 +1,53 @@
+
+<html lang="en">
+<head>
+    <%- include('partials/head'); %>
+</head>
+
+<body>
+
+    <header>
+        <%- include('partials/header'); %>
+    </header>
+
+
+
+    <div class="content">
+
+
+        <ol class="breadcrumb">
+            <li><a href="/collections">Collections</a></li> / 
+            <li><a href="/persons">Persons</a></li> /
+            <li class="active"><a href="/add-person">Add person</a></li>
+        </ol>
+
+
+        <h1>Add person</h1>
+
+
+        <form action="/submit-person" method="post">
+            <span class="item-key">First name:</span> <input name="firstName" type="text" value =""/>   <br>
+            <span class="item-key">Last name:</span> <input name="lastName" type="text" value =""/> <br>
+            <span class="item-key">Job:</span> <input name="job" type="text" value =""/> <br>
+            <input type="hidden" name="id" value="">
+            
+            <div class="edit-buttons">
+                <input type="submit" value="Add new document" class="btn btn-primary"/>
+               
+      
+            </div>
+            
+    
+        </form>
+    
+    
+    
+    </div>
+    
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+
+<html lang="en">
+<head>
+    <%- include('partials/head'); %>
+</head>
+
+<body>
+
+    <header>
+        <%- include('partials/header'); %>
+    </header>
+
+
+    <div class="content">
+
+        <ol class="breadcrumb">
+            <li><a href="/collections">Collections</a></li> / 
+            <li><a href="/playlists">Playlists</a></li>
+        </ol>
+
+
+        <h1>Playlists</h1>
+
+        <a href="/add-playlist" class="btn btn-primary add-new">Add new playlist</a>
+        <span class="doc-amount"><%=playlists.length%> documents</span> 
+
+        <table class="ui sortable celled table">
+            <thead>
+                <tr>
+                    <!--<th>_id</th>-->
+                    <th class="wide">index</th>
+                    <th class="wide">name</th>
+                    <th>track amount</th>
+                    <th class="wide2">image</th>
+                    <th class="wide2">imageSmall</th>
+                    <th>desc</th>
+                    <th></th>
+                    <th></th>
+                
+                </tr>
+            </thead>
+
+            <tbody>
+            <% for (var i = 0; i < playlists.length; i++) { %>
+                <tr>    
+                    <!--<td> <%= playlists[i]._id%> </td>-->
+                    <td> <%= i %> </td>
+                    <td> <%= playlists[i].name%> </td>
+                    <td> <%= playlists[i].tracks.length%> </td>
+
+     
+
+                    <td> <a href="<%= playlists[i].image%>" target="_blank"><%= playlists[i].image%> </a> </td>
+
+                    <td> <a href="<%= playlists[i].imageSmall%>" target="_blank"><%= playlists[i].imageSmall%> </a> </td>
+
+
+
+                    <td> <%= playlists[i].desc%> </td>
+
+
+                    <td> <a href="playlist/<%= playlists[i]._id%>" class="btn btn-primary">Edit</a> </td> 
+
+            
+                    <td> <a href="playlist/<%= playlists[i]._id%>/delete" class="btn btn-danger">Delete</a> </td> 
+
+
+                </tr>
+            <% } %>
+            </tbody>
+
+        </table>
+
+    </div>
+</body>
+
+</html>

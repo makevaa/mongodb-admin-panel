@@ -1,0 +1,30 @@
+
+<html lang="en">
+<head>
+    <%- include('partials/head'); %>
+</head>
+
+<body>
+
+    <header>
+        <%- include('partials/header'); %>
+    </header>
+
+ 
+    <div class="alert alert-success" role="alert">
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+        <!--<span class="sr-only">Action:</span>-->
+        <%= msg %>:
+
+        <p>><%= doc.name %></p>
+
+        <a href='<%=url%>' > Back to <%=url%> </a>
+    
+
+    </div>
+
+
+
+</body>
+
+</html>

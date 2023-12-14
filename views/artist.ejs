@@ -1,0 +1,84 @@
+
+<html lang="en">
+<head>
+    <%- include('partials/head'); %>
+</head>
+
+<body>
+
+    <header>
+        <%- include('partials/header'); %>
+    </header>
+
+
+
+    <div class="content">
+
+        <ol class="breadcrumb">
+            <li><a href="/collections">Collections</a></li> / 
+            <li><a href="/artists">Artists</a></li> /
+            <li class="active">
+                <a href="/artist/<%= artist._id %>">Edit artist</a>
+            </li>
+        </ol>
+
+        <h1>Artist</h1>
+
+
+        <form action="/update-artist" method="post">
+            <label>Name:</label> 
+            <input name="name" type="text" value ="<%= artist.name %>"/>   
+            <br>
+
+            <label>Country:</label> 
+            <input name="country" type="text" value ="<%= artist.country %>"/> 
+            <br>
+            <input type="hidden" name="id" value="<%= artist._id %>">
+            
+            <div class="edit-buttons">
+                <input type="submit" value="Update document" class="btn btn-primary"/>
+            </div>
+        </form>
+    
+    
+    
+        <br><br>
+        Current values:
+        <table class="current-values">
+    
+            <tr>
+                <th>key</th>
+                <th>value</th>
+            </tr>
+    
+            <tr>
+                <td> _id  </td>
+                <td>  <%= artist._id %>  </td>
+            </tr>
+    
+            <tr>
+                <td> name  </td>
+                <td>  <%= artist.name %>  </td>
+            </tr>
+    
+            <tr>
+                <td> country  </td>
+                <td>  <%= artist.country %>  </td>
+            </tr>
+    
+
+    
+    
+        </table>
+    
+
+
+    </div>
+    
+
+
+
+
+</body>
+
+</html>

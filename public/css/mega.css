@@ -1,0 +1,489 @@
+/*** mega.css ***/
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    xborder:1px solid red;
+    max-width:100vw;
+    max-height:100vh;
+    position:relative;
+    overflow:hidden;
+    
+}
+
+
+header {
+    xborder:1px solid red;
+    padding:0px;
+    margin:0px;
+    margin-bottom:0px;
+}
+
+/* bootstrap class */
+a.navbar-brand {
+    padding:10px 10px 10px 10px;
+}
+
+
+
+#app-container {
+    xborder:1px solid red;
+    width:100vw;
+    height:100%;
+    max-height:100vh;
+    display:flex;
+}
+
+.side {
+    xborder:1px solid rgb(105, 105, 105);
+    height:90%;
+    display:inline-block;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    padding:40px 0px 0px 0px;
+}
+
+#left.side {
+    width:15%;
+   
+}
+
+
+
+#left.side > * .item {
+    xmargin: 5px;
+    padding:10px 10px 10px 30px;
+
+    xborder-radius:5px;
+    background-color:rgba(0,0,0, 0.2);
+    transition: all 0.1s;
+    cursor:pointer;
+    user-select:none;
+    color: rgb(175, 175, 175);
+    position:relative;
+    text-align:left;
+}
+
+#left.side > * .item > i {
+    margin-right:10px;
+    color:rgb(170, 170, 170);
+    font-size: 1em;
+}
+
+#left.side > * .item.selected {
+    xborder:1px solid green;
+    background-color:rgba(255,255,255, 0.1);
+    color:rgb(38, 163, 38);
+}
+
+#left.side > * .item.selected > i {
+    color:rgb(38, 163, 38);
+}
+
+#left.side > * .item:hover {
+    background-color:rgba(0,0,0, 0.4)
+}
+
+#left.side > * .item.selected:hover {
+    background-color:rgba(255,255,255, 0.1);
+}
+
+/* background element which is animated */
+.playlist-item-bg {
+    position:absolute;
+    transition:all 0.6s;
+    background-color:rgba(255,255,255, 0.3);
+}
+
+#playlists-container {
+    xpadding: 5px;
+    
+}
+
+#playlists-container  > .title {
+    padding:10px;
+    
+}
+
+#playlists {
+    position:relative;
+}
+
+
+/* when hovering track over playlist with drag-n-drop */
+#playlists > .item.drag-hover {
+    background-color:rgba(255,255,255, 0.1);
+}
+
+#new-playlist-button-container {
+    xborder:1px solid red;
+    width:100%;
+    text-align:center;
+    padding: 20px 10px 20px 10px;
+    user-select:none;
+   
+} 
+
+/* the button to create new playlist */
+#new-playlist-button {
+    border: 2px solid rgb(58, 58, 58);
+    border-radius: 5px;
+    width:80%;
+    padding:10px 10px 10px 10px;
+    display:inline-block;
+    margin:auto;
+    cursor:pointer;
+    background-color:rgba(0,0,0, 0.2);
+    box-shadow: 5px 5px 5px rgba(0,0,0, 0.2);
+    transition: all 0.05s;
+    text-align:left;
+    color:rgb(59, 179, 89);
+    color:rgb(136, 139, 155);
+
+}
+
+/* icon inside "new playlist" button */
+#new-playlist-button > i {
+    margin-right: 5px;
+}
+
+#new-playlist-button:hover {
+    background-color:rgba(0,0,0, 0.3);
+    border: 2px solid rgb(39, 112, 39);
+} 
+
+#new-playlist-button:active {
+    background-color:rgba(0,0,0, 0.1);
+    transform: translateY(3px);
+} 
+
+/* the placeholder item with input field and buttons */
+.new-playlist-container {
+    xborder:1px solid grey;
+    xborder-top:1px solid rgb(80, 80, 80);
+    padding: 10px 10px 10px 10px;
+    background-color:rgba(0,0,0, 0.2);
+    transition: all 0.05s;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.new-playlist-container  > .name {
+    border:1px solid rgb(94, 94, 94);
+	border-radius:4px;
+	padding: 10px;
+	background-color:#202425;
+	color:rgb(182, 182, 182);
+    width:100%;
+    height:100%;
+}
+
+.new-playlist-container  > .name:focus {
+    border:1px solid #179242; 
+	outline: none !important;
+
+} 
+
+.new-playlist-container  > .button {
+    xborder:1px solid grey;
+    width:20%;
+    height:100%;
+    padding:7px;
+    cursor:pointer;
+    font-size:1.5em;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.new-playlist-container  > .button:hover {
+    background-color:rgba(255,255,255, 0.1);
+}
+
+.new-playlist-container  > .button:active {
+    background-color:rgba(0,0,0, 0.1);
+}
+
+.new-playlist-container  > .button.create {
+    color:rgb(57, 160, 57);
+}
+
+.new-playlist-container  > .button.discard {
+    color:rgb(173, 58, 58);
+}
+
+#right.side {
+    xborder:1px solid green;
+    display:inline-block;
+    width:80%;
+    xbackground-color:rgba(0,0,0, 0.2);
+    background-color:rgb(24, 24, 24);
+    padding: 50px;
+    padding-top:0px;
+ 
+}
+
+
+
+#right.side > .header {
+    xborder:1px solid grey;
+    xborder-bottom:1px solid rgb(37, 37, 37);
+    background-color:rgb(24, 24, 24);
+    z-index:1;
+    position:sticky;
+    top:0px;
+    padding-top:30px;
+
+
+
+}
+
+#right.side > .header > .title {
+    font-size: 1.2em;
+    xposition:fixed;
+    padding:10px;
+    display:inline-block;
+}
+
+#right.side > .header > .track-amount {
+    color:grey;
+    padding: 0px 10px 5px 10px;
+    display:inline-block;
+}
+
+
+
+
+/* tracklist header labels */
+#right.side > .header > .labels {
+    margin-top:0px;
+  
+    background-color:rgba(0,0,0, 0.2);
+    padding:5px;
+    xposition:fixed;
+
+}
+
+#right.side > .header > .labels > .cell{
+    xborder:1px solid red;
+    margin-top:0px;
+    display:inline-block;
+    min-width:300px;
+    max-width:300px;
+    width:300px;
+    font-weight: 800;
+    padding:10px;
+  
+}
+
+
+#tracklist {
+   margin-top:0px;
+   padding:5px;
+   user-select:none;
+    
+}
+
+#tracklist > .item {
+    xborder:1px solid grey;
+    border-radius:5px;
+    padding:5px 10px 5px 10px;
+    xheight:30px;
+    position:relative;
+
+    xdisplay: flex;
+    xalign-items: left;
+    xjustify-content: space-between;
+   
+
+}
+
+#tracklist > .item:hover {
+    xborder:1px solid grey;
+
+    background-color: rgba(255,255,255, 0.1);
+}
+
+#tracklist > .item.selected {
+    background-color: rgba(255,255,255, 0.1);
+}
+
+
+#tracklist > .item > .cell{
+    xborder:1px solid green;
+
+    display:inline-block;
+    width:300px;
+    margin: 0px 0px 0px 0px;
+    padding:5px;
+    
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+     
+    display: inline-flex;
+    justify-content: left;
+    align-items: center; 
+}
+
+
+#tracklist > .item > .kebab {
+    xborder:1px solid grey;
+    border-radius:50px;
+    width:30px;
+    aspect-ratio:1/1;
+    cursor:pointer;
+    visibility:hidden;
+ 
+    display: inline-flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+#tracklist > .item > .kebab:hover {
+    background-color:rgba(255,255,255, 0.1);
+}
+
+#tracklist > .item > .kebab:active {
+    background-color:rgba(0,0,0, 0.1);
+}
+
+/* show kebab menu button on item hover */
+#tracklist > .item:hover .kebab  {
+    visibility:visible;
+    
+}
+
+#context-menu {
+    xborder:2px solid rgb(71, 71, 71);
+    border-radius:5px;
+    position:absolute;
+    background-color:rgb(65, 65, 65);
+    width:200px;
+    padding:10px;
+    xheight:250px;
+    z-index:2;
+    box-shadow:5px 5px 5px rgba(0,0,0, 0.6);
+    user-select:none;
+}
+
+#context-menu > div{
+    padding:5px;
+}
+
+#context-menu > .menu-item {
+    cursor:pointer;
+}
+
+#context-menu > .menu-item:hover {
+    background-color:rgba(255,255,255, 0.1);
+}
+
+#context-menu > .menu-item:active {
+    background-color:rgba(0,0,0, 0.1);
+}
+
+#context-menu > .menu-item > i {
+    margin-right:5px;
+    filter: drop-shadow(0px 0px 2px rgba(0,0,0, 0.5));
+}
+
+.red {
+    color:rgb(196, 85, 85);
+}
+
+/* scroller text animation */
+.added {
+    xborder:1px solid grey;
+    border-radius:3px;
+    position:absolute;
+    display:inline-block;
+    xwidth:100px;
+    xheight:50px;
+    transition: all 0.3s;
+    opacity:1;
+    xbackground-color:rgb(24, 24, 24);
+    xbox-shadow:3px 3px 3px rgba(0,0,0, 0.6);
+    padding:10px;
+    color:rgb(0, 145, 230);
+    text-align: center;
+    z-index:1;
+}
+
+
+
+#search-container {
+	xborder:1px solid red;
+	height:50px;
+	width:300px;
+
+	transition: all 0.25s cubic-bezier(0.72, 1.2, 0.71, 0.72);
+	display:inline-flex;
+	display:none;
+	xjustify-content: center;
+	align-items:center;
+	xmargin-left:10px;
+    margin-bottom:5px;
+
+}
+
+
+#search {
+	border:2px solid rgb(94, 94, 94);
+	border-radius:5px;
+	width:100%;
+	height:80%;
+	xfont-size:1em;
+	xfont-weight:400;
+	font-family: 'Roboto', sans-serif;
+	padding: 0px 5px 0px 10px;
+
+	background-color:#202425;
+	color:rgb(182, 182, 182);
+
+}
+
+#search:hover {
+	xwidth:100%;
+}
+
+#search:focus {
+	border:2px solid #179242; 
+	outline: none !important;
+	xwidth:100%;
+}
+
+#clear-search {
+	xborder:1px solid grey;
+	xborder-radius:50px;
+	width: 50px;
+	height:50px;
+    margin-left:10px;
+	xfloat:right;
+	xdisplay:inline-block;
+	display:inline-flex;
+	justify-content: center;
+	align-items:center;
+	font-size:1.5em;
+	cursor:pointer;
+	color:grey;
+}
+
+#clear-search:hover {
+	color:rgb(85, 85, 85);
+}
+
+#clear-search:active {
+	color:rgb(51, 51, 51);
+}
+

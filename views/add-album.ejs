@@ -1,0 +1,73 @@
+
+<html lang="en">
+<head>
+    <%- include('partials/head'); %>
+</head>
+
+<body>
+
+    <header>
+        <%- include('partials/header'); %>
+    </header>
+
+
+
+    <div class="content">
+        <ol class="breadcrumb">
+            <li><a href="/collections">Collections</a></li> / 
+            <li><a href="/albums">Albums</a></li> /
+            <li class="active"><a href="/add-album">Add album</a></li>
+        </ol>
+
+        <h1>Add album</h1>
+
+        <form action="/submit-album" method="post">
+
+            <label>Name:</label> 
+            <input name="name" type="text" value =""/>   <br>
+
+           <!-- Artists dropdown menu -->
+           <label for="artist">Artist:</label>
+            <div id="artist" class="ui fluid search selection dropdown">
+                <input type="hidden" name="artist" value='' %>>
+                <i class="dropdown icon"></i>
+                    <div class="default text">Select artist</div>
+                    <div class="menu">
+
+                        <% for (var i = 0; i < artists.length; i++) { %>
+                            <div class="item" data-value=<%= artists[i]._id%> >  <%= artists[i].name %>  </div>
+                        <% } %>
+
+                    </div>
+            </div>
+            <br>
+
+            <label>Year:</label> <input name="year" type="text" value =""/> <i>(optional)</i>
+            <br>
+
+            <label>Image:</label> <input name="image" type="text" value =""/> <i>(optional)</i>
+            <br>
+
+            
+            <div class="edit-buttons">
+                <input type="submit" value="Add new document" class="btn btn-primary"/>
+               
+      
+            </div>
+            
+    
+        </form>
+    
+    
+    
+    </div>
+    
+
+    <script>
+             $('#artist').dropdown();
+    </script>
+
+
+</body>
+
+</html>

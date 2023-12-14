@@ -1,0 +1,81 @@
+
+<html lang="en">
+<head>
+    <%- include('partials/head'); %>
+</head>
+
+<body>
+
+    <header>
+        <%- include('partials/header'); %>
+    </header>
+
+
+    <div class="content">
+
+        <ol class="breadcrumb">
+            <li><a href="/collections">Collections</a></li> / 
+            <li><a href="/albums">Albums</a></li>
+        </ol>
+
+
+        <h1>Albums</h1>
+
+        <a href="/add-album" class="btn btn-primary add-new">Add new album</a> 
+        <span class="doc-amount"><%=albums.length%> documents</span> 
+
+        <table class="ui sortable celled table">
+
+            <thead>
+                <tr>
+                    <!--<th>_id</th>-->
+                    <th class="wide">index</th>
+                    <th class="wide">name</th>
+                    <th class="wide">artist</th>
+                    <th class="wide">year</th>
+                    <th class="wide">image</th>
+                    <th></th>
+                    <th></th>
+                   
+                </tr>
+            </thead>
+
+            <tbody>
+            <% for (var i = 0; i < albums.length; i++) { %>
+                <tr>    
+                    <!--<td> <%= albums[i]._id%> </td>-->
+                    <td> <%= i %> </td>
+                    <td> <%= albums[i].name%> </td>
+
+                    <td> <%= albums[i].artistName%> </td>
+
+                    <td> <%= albums[i].year%> </td>
+
+                    <td> <a href="https://i.imgur.com/<%= albums[i].image%>.jpg" target="_blank"> <%= albums[i].image%> </a>  </td>
+               
+
+                    <td> <a href="album/<%= albums[i]._id%>" class="btn btn-primary">Edit</a> </td> 
+
+            
+                    <td> <a href="album/<%= albums[i]._id%>/delete" class="btn btn-danger">Delete</a> </td> 
+
+
+                </tr>
+            <% } %>
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+    <script>
+
+
+
+                
+    </script>
+
+</body>
+
+</html>

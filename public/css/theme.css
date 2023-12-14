@@ -1,0 +1,32 @@
+/*** 
+theme.css
+dark theme 
+***/
+
+body {
+    background-color:rgb(32, 32, 32);
+    color:rgb(175, 175, 175);
+}
+
+nav.navbar {
+    background-color:rgb(32, 32, 32);
+}
+
+.ui.table {
+    background-color:rgb(32, 32, 32);
+    color:grey;
+}
+
+thead > tr > th {
+    background-color:rgb(75, 74, 74)!important;
+    color:rgb(230, 230, 230)!important;
+}
+
+tr, th, td {
+    background-color:rgb(48, 48, 48)!important;
+    color:rgb(177, 177, 177)!important;
+}
+
+tr:hover {
+    filter:brightness(1.1);
+}

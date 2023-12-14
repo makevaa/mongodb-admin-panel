@@ -1,0 +1,46 @@
+<div id="left" class="side">
+
+
+    <div id="library-container">
+
+        <div id="library" class="item">
+            <i class="fa-solid fa-music"></i>
+            Library (all music)
+        </div>
+    </div>
+
+
+    <div id="playlists-container">
+
+        <div class="title">Playlists</div>
+
+        <div id="playlists">
+
+            <% for (let i=0; i<playlists.length; i++) { %>    
+                <div class="item" list-id=<%=playlists[i].id%> > 
+                    <i class="fa-regular fa-circle-play"></i>
+                    <%= playlists[i].name %> 
+                </div>
+            <% } %>
+
+
+
+        </div>
+
+      
+
+    </div>
+
+    <div id="new-playlist-button-container">
+        <div id="new-playlist-button">
+            <i class="fa-solid fa-plus"></i>
+            New playlist
+        </div>
+    </div>
+</div>
+
+
+
+
+
+  

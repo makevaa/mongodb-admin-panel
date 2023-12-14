@@ -1,0 +1,165 @@
+
+<html lang="en">
+<head>
+    <%- include('partials/head'); %>
+</head>
+
+<body>
+
+    <header>
+        <%- include('partials/header'); %>
+    </header>
+
+
+
+    <div class="content">
+
+        <ol class="breadcrumb">
+            <li><a href="/collections">Collections</a></li> / 
+            <li><a href="/tracks">Tracks</a></li> /
+            <li class="active">
+                <a href="/track/<%= track._id %>">Edit track</a>
+            </li>
+        </ol>
+
+        <h1>Track</h1>
+
+
+        <form action="/update-track" method="post">
+
+            <label for="name">Name:</label> 
+            <input name="name" type="text" value ="<%= track.name %>"/>   <br>
+
+            <!-- <span class="item-key">Artist:</span> <input name="artist" type="text" value ="<%= track.artist %>"/> <br>
+            -->
+
+
+            <!-- Artists dropdown menu -->
+            <label for="artist">Artist:</label>
+            <div id="artist" class="ui fluid search selection dropdown">
+       
+                <input type="hidden" name="artist" value=<%= artist._id %>>
+                <i class="dropdown icon"></i>
+
+                    <div class="default text">Select artist</div>
+
+                    <div class="menu">
+
+                        <% for (var i = 0; i < artists.length; i++) { %>
+                            <div class="item" data-value= <%= artists[i]._id%> >  <%= artists[i].name %>  </div>
+                        <% } %>
+                    
+                    </div>
+
+            </div>
+
+
+
+            <br>
+
+
+            <label for="album">Album:</label>
+            <div id="album" class="ui fluid search selection dropdown">
+       
+                <input type="hidden" name="album" value=<%= album._id %> >
+                <i class="dropdown icon"></i>
+
+                    <div class="default text">Select album</div>
+
+                    <div class="menu">
+
+                        <% for (var i = 0; i < albums.length; i++) { %>
+                            <div class="item" data-value= <%=albums[i]._id%> > 
+                                <%= albums[i].artistName %> - <%= albums[i].name %>  
+                            </div>
+                        <% } %>
+
+                    </div>
+     
+
+            </div>
+
+
+            <br>
+            <label for='playlists'>Track in playlists:</label> 
+
+            <select id='playlists' name="playlists" class="ui fluid search dropdown" multiple="">
+
+                <!-- Default text for field -->
+                <option value="">Add to playlists</option>
+      
+            
+                <!-- Add all playlists in menu -->
+                <% for (var i = 0; i < allPlaylists.length; i++) { %>
+
+                    <option value=<%= allPlaylists[i]._id %>> <%= allPlaylists[i].name%> </option>
+
+                <% } %>
+
+
+
+        
+
+            </select>
+
+
+            <br>
+         
+            <input type="hidden" name="id" value="<%= track._id %>">
+            
+            <div class="edit-buttons">
+                <input type="submit" value="Update document" class="btn btn-primary"/>
+            </div>
+        </form>
+    
+    
+    
+        <br><br>
+        Current values:
+        <table class="current-values">
+            <tr>
+                <th>key</th>
+                <th>value</th>
+            </tr>
+    
+            <tr>
+                <td> name  </td>
+                <td>  <%= track.name %>  </td>
+            </tr>
+    
+            <tr>
+                <td> artist  </td>
+                <td>  <%= track.artist %>  </td>
+            </tr>
+    
+            <tr>
+                <td> album  </td>
+                <td> <%= track.album %>  </td>
+            </tr>    
+            
+            <tr>
+                <td> _id  </td>
+                <td>  <%= track._id %>  </td>
+            </tr>
+        </table>
+    
+    </div>
+
+    <!-- declare variable for the script tag to use -->
+    <% const selectedLists = track.playlists %> 
+    
+
+    <!-- init fomantic-ui dropdown menus -->
+    <script>
+        const lists = "<%= selectedLists %>".split(',');
+
+        $('#artist').dropdown();
+        $('#album').dropdown();
+        $('#playlists').dropdown('set selected', lists);
+    </script> 
+
+
+
+</body>
+
+</html>

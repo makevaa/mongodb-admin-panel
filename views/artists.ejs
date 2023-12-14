@@ -1,0 +1,67 @@
+
+<html lang="en">
+<head>
+    <%- include('partials/head'); %>
+</head>
+
+<body>
+
+    <header>
+        <%- include('partials/header'); %>
+    </header>
+
+
+    <div class="content">
+
+        <ol class="breadcrumb">
+            <li><a href="/collections">Collections</a></li> / 
+            <li><a href="/artists">Artists</a></li>
+      
+        </ol>
+
+
+        <h1>Artists</h1>
+      
+
+        <a href="/add-artist" class="btn btn-primary add-new">Add new artist</a> 
+        <span class="doc-amount"><%=artists.length%> documents</span>
+
+        <table class="ui sortable celled table">
+
+
+            <thead>
+                <tr>
+                    <!--<th>_id</th>-->
+                    <th class="wide">index</th>
+                    <th class="wide">name</th>
+                    <th>country</th>
+                    <th></th>
+                    <th></th>
+                
+                </tr>
+            </thead>
+
+            <tbody>
+            <% for (var i = 0; i < artists.length; i++) { %>
+                <tr>    
+                    <!--<td> <%= artists[i]._id%> </td>-->
+                    <td> <%= i %> </td>
+                    <td> <%= artists[i].name%> </td>
+                    <td> <%= artists[i].country%> </td>
+
+                
+
+                    <td> <a href="artist/<%= artists[i]._id%>" class="btn btn-primary">Edit</a> </td> 
+                    <td> <a href="artist/<%= artists[i]._id%>/delete" class="btn btn-danger">Delete</a> </td> 
+
+
+                </tr>
+            <% } %>
+            </tbody>
+
+        </table>
+
+    </div>
+</body>
+
+</html>

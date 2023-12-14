@@ -1,0 +1,1 @@
+exports.SimpleMessage = 'Hello world';

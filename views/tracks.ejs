@@ -1,0 +1,77 @@
+
+<html lang="en">
+<head>
+    <%- include('partials/head'); %>
+</head>
+
+<body>
+
+    <header>
+        <%- include('partials/header'); %>
+    </header>
+
+
+    <div class="content">
+
+        <ol class="breadcrumb">
+            <li><a href="/collections">Collections</a></li> / 
+            <li><a href="/tracks">Tracks</a></li>
+        </ol>
+
+
+        <h1>Tracks</h1>
+
+        <a href="/add-track" class="btn btn-primary add-new">Add new track</a> 
+        <span class="doc-amount"><%=tracks.length%> documents</span> 
+
+        <table class="ui sortable celled table">
+
+            <thead>
+                <tr>
+                    <!--<th>_id</th>-->
+                    <th class="wide">index</th>
+                    <th class="wide">name</th>
+                    <th class="wide">artist</th>
+                    <th class="wide">album</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+            <% for (var i = 0; i < tracks.length; i++) { %>
+                <tr>    
+                    <!--<td> <%= tracks[i]._id%> </td>-->
+                    <td> <%= i %> </td>
+                    <td> <%= tracks[i].name%> </td>
+
+                    <td> <%= tracks[i].artistName%> </td>
+
+                    <td> <%= tracks[i].albumName%> </td>
+
+
+                    <td> <a href="track/<%= tracks[i]._id%>" class="btn btn-primary">Edit</a> </td> 
+
+            
+                    <td> <a href="track/<%= tracks[i]._id%>/delete" class="btn btn-danger">Delete</a> </td> 
+
+
+                </tr>
+            <% } %>
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+    <script>
+
+
+
+                
+    </script>
+
+</body>
+
+</html>

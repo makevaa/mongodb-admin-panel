@@ -1,0 +1,77 @@
+
+<html lang="en">
+<head>
+    <%- include('partials/head'); %>
+</head>
+
+<body>
+
+    <header>
+        <%- include('partials/header'); %>
+    </header>
+
+
+
+    <div class="content">
+
+        <h1>Person</h1>
+
+
+        <form action="/update-person" method="post">
+            <span class="item-key">First name:</span> <input name="firstName" type="text" value ="<%= person.firstName %>"/>   <br>
+            <span class="item-key">Last name:</span> <input name="lastName" type="text" value ="<%= person.lastName %>"/> <br>
+            <span class="item-key">Job:</span> <input name="job" type="text" value ="<%= person.job %>"/> <br>
+            <input type="hidden" name="id" value="<%= person._id %>">
+            
+            <div class="edit-buttons">
+                <input type="submit" value="Update document" class="btn btn-primary"/>
+            </div>
+        </form>
+    
+    
+    
+        <br><br>
+        Current values:
+        <table class="current-values">
+    
+            <tr>
+                <th>key</th>
+                <th>value</th>
+            </tr>
+    
+    
+    
+            <tr>
+                <td> firstName  </td>
+                <td>  <%= person.firstName %>  </td>
+            </tr>
+    
+            <tr>
+                <td> lastName  </td>
+                <td>  <%= person.lastName %>  </td>
+            </tr>
+    
+            <tr>
+                <td> job  </td>
+                <td>  <%= person.job %>  </td>
+            </tr>    
+            
+            <tr>
+                <td> _id  </td>
+                <td>  <%= person._id %>  </td>
+            </tr>
+    
+    
+        </table>
+    
+
+
+    </div>
+    
+
+
+
+
+</body>
+
+</html>
